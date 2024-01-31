@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "builds": [{ "src": "index.js", "use": "@now/node" }],
+  "routes": [
+    {"src": "/assets/(.*)", "dest": "/public/userProfile/$1"},
+    {"src": "/profile/(.*)", "dest": "/public/member-profile/$1"},
+    {"src": "/schedule/images/(.*)", "dest": "/public/schedule/$1"},
+    {"src": "/news/images/(.*)", "dest": "/public/news/$1"},
+    {"src": "/", "dest": "./server.js"}
+  ],
+  "rewrites": [{"source": "/(.*)", "destination": "/server.js"}]
+}
